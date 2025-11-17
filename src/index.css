@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --font-jersey: "Jersey 10", "sans-serif"; 
+  --color-newspaper-gray: #4B4B4B; 
+}
+
+@utility vertical-lr {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+
+@utility text-stroke-custom {
+   color: white;
+    text-shadow:
+      1px 0 var(--color-newspaper-gray),
+      -1px 0 var(--color-newspaper-gray),
+      0 1px var(--color-newspaper-gray),
+      0 -1px var(--color-newspaper-gray),
+      1px 1px var(--color-newspaper-gray),
+      1px -1px var(--color-newspaper-gray),
+      -1px 1px var(--color-newspaper-gray),
+      -1px -1px var(--color-newspaper-gray);
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
