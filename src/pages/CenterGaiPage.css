@@ -1,0 +1,35 @@
+.neon-sign {
+    background-color: #000;
+    color: #fff;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bolder;
+    animation: neon-flicker 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon-flicker {
+    0%,
+    100% {
+        box-shadow:
+            0 0 1px var(--glow),
+            0 0 1.5px var(--glow),
+            0 0 3px var(--glow),
+            0 0 5px var(--glow),
+            0 0 6px var(--glow);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0.5px var(--glow),
+            0 0 1.5px var(--glow),
+            0 0 1.7px var(--glow),
+            0 0 1.8px var(--glow),
+            0 0 2px var(--glow);
+    }
+}
+
+.right-column {
+    position: fixed; 
+    right: 0; 
+    top: 30px; 
+}

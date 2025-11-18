@@ -2,10 +2,9 @@ import React from "react";
 import type CardProps from "../../types/card";
 
 
-const MobileCard: React.FC<CardProps> = ({ image, title, onClick, className }) => {
+const MobileCard: React.FC<CardProps> = ({ image, title, className }) => {
     return (
         <div
-            onClick={onClick}
             className={`relative cursor-pointer overflow-hidden rounded-xl shadow-lg 
                         transform transition-transform duration-300 hover:scale-102 h-50
                         ${className}`}

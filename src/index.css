@@ -2,6 +2,10 @@
 
 @theme {
   --font-jersey: "Jersey 10", "sans-serif"; 
+  --font-anton: "Anton SC", "sans-serif"; 
+  --font-neon: "Neonderthaw", "sans-serif"; 
+  --font-rubic: "Rubik Glitch Pop", "sans-serif"; 
+  --font-momo: "Momo Trust Display", "sans-serif"; 
   --color-newspaper-gray: #4B4B4B; 
 }
 

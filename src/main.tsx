@@ -5,12 +5,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css'
 import App from './App.tsx'
 import HomePage from "./pages/HomePage.tsx";
+import CenterGaiPage from "./pages/CenterGaiPage.tsx";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/center-gai" element={<CenterGaiPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

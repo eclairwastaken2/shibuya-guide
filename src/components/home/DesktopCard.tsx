@@ -1,10 +1,9 @@
 import React from "react";
 import type CardProps from "../../types/card";
 
-const DesktopCard: React.FC<CardProps> = ({ image, title, onClick, className }) => {
+const DesktopCard: React.FC<CardProps> = ({ image, title, className }) => {
     return (
         <div
-            onClick={onClick}
             className={`relative cursor-pointer overflow-hidden  
                         transform transition-transform duration-300 hover:scale-102
                         ${className} border-newspaper-gray border-2 h-52`}
