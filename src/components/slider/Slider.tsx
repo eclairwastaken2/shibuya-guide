@@ -1,34 +1,63 @@
-import { motion, AnimatePresence } from "framer-motion"; 
-import React, { useState } from "react"; 
+import { motion, useMotionValue, animate } from "framer-motion";
+import React, { useState, useEffect } from "react";
 
 interface SliderProps {
-    children: React.ReactNode; 
-    height?: string; 
+  children: React.ReactNode;
+  onSlideChange?: (index: number) => void;
 }
 
-export default function Slider({ children, height = "h-64" }: SliderProps) {
-    const slides = React.Children.toArray(children); 
-    const [index, setIndex] = useState(0); 
-    const [direction, setDirection] = useState(1);
+export default function Slider({ children, onSlideChange }: SliderProps) {
+  const slides = React.Children.toArray(children);
+  const width = typeof window !== "undefined" ? window.innerWidth : 1920;
 
-    const paginate = (dir: number) => {
-        setDirection(dir); 
-        setIndex((prev) => {
-            return dir > 0
-                ? (prev + 1) % slides.length
-                : (prev - 1 + slides.length) % slides.length
-        })
-    }; 
+  const x = useMotionValue(0)
+  const [index, setIndex] = useState(0);
+  const wrapIndex = (i: number) =>
+    (i + slides.length) % slides.length;
 
-    const variants = {
-        enter: (dir: number) => ({
-            x: dir > 0 ? 200 : -200, 
-            opacity: 0, 
-        }), 
-        center: { x: 0, opacity: 1 }, 
-        exit: (dir: number) => ({
-            x: dir > 0 ? -200 : 200, 
-            opacity: 0
-        }), 
-    }; 
+  const onDragEnd = (_e: any, info: any) => {
+    const offset = info.offset.x;
+    const velocity = info.velocity.x;
+
+    if (offset < -50 || velocity < -500) {
+      setIndex((i) => {
+        const next = wrapIndex(i + 1); 
+        onSlideChange?.(next)
+        return next
+      });
+    } else if (offset > 50 || velocity > 500) {
+        setIndex((i) => {
+            const next = wrapIndex(i - 1); 
+            onSlideChange?.(next)
+            return next; 
+        });
+    }
+  };
+
+  useEffect(() => {
+    animate(x, -index * width, { duration: 0.4 });
+  }, [index]);
+
+  return (
+    <div className="relative w-screen h-screen overflow-hidden">
+      {/* Track: contains ALL slides */}
+      <motion.div
+        drag="x"
+        onDragEnd={onDragEnd}
+        dragConstraints={{ left: -Infinity, right: Infinity }}
+        style={{ x }}
+        className="flex flex-row w-max h-full"
+      >
+        {/* Duplicate slides for infinite loop */}
+        {[...slides].map((slide, i) => (
+          <div
+            key={i}
+            className="w-screen h-full flex-shrink-0"
+          >
+            {slide}
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
 }
