@@ -51,7 +51,7 @@ export default function HomePage() {
                         {isMobile ? (
                             <MobileCard key={idx} {...card} className="h-40" />
                         ) : (
-                            <DesktopCard key={idx} {...card} className="h-40" />
+                            <DesktopCard key={idx} {...card}  />
                         )}
                     </Link>
                 )}
@@ -62,7 +62,7 @@ export default function HomePage() {
                         {isMobile ? (
                             <MobileCard key={idx} {...card} className="h-36" />
                         ) : (
-                            <DesktopCard key={idx} {...card} className="h-40" />
+                            <DesktopCard key={idx} {...card} />
                         )}
                     </Link>
                 )}

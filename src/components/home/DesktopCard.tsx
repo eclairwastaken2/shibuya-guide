@@ -6,16 +6,16 @@ const DesktopCard: React.FC<CardProps> = ({ image, title, className }) => {
         <div
             className={`relative cursor-pointer overflow-hidden  
                         transform transition-transform duration-300 hover:scale-102
-                        ${className} border-newspaper-gray border-2 h-52`}
+                        ${className} border-newspaper-gray border-2 h-64`}
         >
-            <div className="relative">
-                <img src={image} alt={title} className="grayscale hover:grayscale-0 duration-300" />
+            {/* <div className="relative"> */}
+                <img src={image} alt={title} className="grayscale hover:grayscale-0 duration-300 w-full h-full" />
                 {(title) && (
                     <div className="max-h-50 break-normal absolute top-0 left-0 vertical-lr text-xl font-bold">
                         {title && <h3 className="font-bold break-normal text-lg text-stroke-custom text-white">{title}</h3>}
                     </div>
                 )}
-            </div>
+            {/* </div> */}
         </div>
     )
 }
