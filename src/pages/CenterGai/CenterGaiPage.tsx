@@ -24,6 +24,7 @@ export default function CenterGaiPage() {
                 <Neon onClick={() => setCurrentIndex(1)} textColor="#fff6d9" bgColor="#e62e00" font="var(--font-anton)" header="FOOD" className={activeSlide === 1 ? "scale-115" : "scale-100"} />
                 <Neon onClick={() => setCurrentIndex(2)} bgColor="#16d0f5" textColor="white" font="var(--font-momo)" header="SHOP" className={activeSlide === 2 ? "scale-115" : "scale-100"} />
                 <Neon onClick={() => setCurrentIndex(3)} textColor="white" bgColor="#ff17f0" font="var(--font-neon)" header="TRAVEL" className={activeSlide === 3 ? "scale-115" : "scale-100"} />
+                    
             </div>
 
         </div>
