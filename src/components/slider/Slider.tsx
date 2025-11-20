@@ -4,14 +4,15 @@ import React, { useState, useEffect } from "react";
 interface SliderProps {
   children: React.ReactNode;
   onSlideChange?: (index: number) => void;
+  currentIndex?: number; 
 }
 
-export default function Slider({ children, onSlideChange }: SliderProps) {
+export default function Slider({ children, onSlideChange, currentIndex }: SliderProps) {
   const slides = React.Children.toArray(children);
   const width = typeof window !== "undefined" ? window.innerWidth : 1920;
+  const [index, setIndex] = useState(0);
 
   const x = useMotionValue(0)
-  const [index, setIndex] = useState(0);
   const wrapIndex = (i: number) =>
     (i + slides.length) % slides.length;
 
@@ -37,6 +38,13 @@ export default function Slider({ children, onSlideChange }: SliderProps) {
   useEffect(() => {
     animate(x, -index * width, { duration: 0.4 });
   }, [index]);
+
+  useEffect(() => {
+    if (currentIndex !== undefined) {
+      setIndex(currentIndex);
+      onSlideChange?.(currentIndex)
+    }
+  }, [currentIndex])
 
   return (
     <div className="relative w-screen h-screen overflow-hidden">
