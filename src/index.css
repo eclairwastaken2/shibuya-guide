@@ -6,15 +6,18 @@
   --font-neon: "Neonderthaw", "sans-serif"; 
   --font-rubic: "Rubik Glitch Pop", "sans-serif"; 
   --font-momo: "Momo Trust Display", "sans-serif"; 
+  --font-fatface: "Abril Fatface", "serif"; 
   --color-newspaper-gray: #4B4B4B; 
   --color-meijijingu-red: #B03E4A; 
   --color-meijijingu-white: #E9DFD5; 
+  --color-meijijingu-offwhite: #E3DDD1;
 }
 
 @utility vertical-lr {
   writing-mode: vertical-lr;
   text-orientation: upright;
 }
+
 
 @utility text-stroke-custom {
    color: white;

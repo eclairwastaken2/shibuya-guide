@@ -24,7 +24,7 @@ export default function HomePage() {
             link: "/sky"
         },
         {
-            image: "/meijijingu.jpg",
+            image: "/meijijingu/meijijingu.jpg",
             title: "MEIJI JINGU SHRINE",
             link: "/meiji-jingu"
         },
