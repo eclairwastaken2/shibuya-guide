@@ -25,7 +25,7 @@ export default function MeijijinguPage() {
             </div>
             <div className="bg-meijijingu-offwhite p-4 shadow">
                 <div>
-                    <h1 className="text-3xl font-fatface">What to See?</h1>
+                    <h1 className="text-3xl font-fatface mb-2">What to See?</h1>
                 </div>
                 <div className="flex items-center border-t">
                     <div className="w-1/2 h-45 overflow-hidden m-3">
@@ -56,24 +56,68 @@ export default function MeijijinguPage() {
                 </div>
             </div>
             <div className="bg-meijijingu-offwhite p-4 shadow">
-                <h2 className="text-3xl font-black mb-4">Access</h2>
+                <h2 className="text-4xl font-fatface tracking-widest mb-2 text-center text-shadow-lg text-shadow-gray">ACCESS</h2>
+                <div className="px-6 border-t">
+                    <div className="m-2 space-y-4">
 
-                <ul className="text-sm mb-6 space-y-2">
-                    <li><strong>Harajuku Station</strong> – JR Yamanote Line</li>
-                    <li><strong>Yoyogi Station</strong> – JR Chuo Line</li>
-                    <li><strong>Sangubashi Station</strong> – Odakyu Line</li>
-                    <li><strong>Kita-Sando Station</strong> – Metro Fukutoshin Line</li>
-                </ul>
+                        <div className="grid grid-cols-2 gap-3">
+                            <div className="font-fatface text-xl leading-tight">
+                                SANGUBASHI<br />STATION
+                            </div>
+                            <div className="text-right text-xs leading-relaxed">
+                                ODAKYU LINE<br />
+                                3 min walk
+                            </div>
+                        </div>
 
-                <h2 className="text-3xl font-black mb-4">Etiquette</h2>
+                        <div className="grid grid-cols-2 gap-3">
+                            <div className="font-fatface text-xl leading-tight">
+                                YOYOGI<br />STATION
+                            </div>
+                            <div className="text-right text-xs leading-relaxed">
+                                JR Yamanote Line<br />
+                                JR Chuo, Sobu Line<br />
+                                Toei Oedo Line<br />
+                                5 min walk
+                            </div>
+                        </div>
 
-                <ul className="text-sm list-disc pl-5 space-y-2">
-                    <li>Preserve the dignity of the shrine.</li>
-                    <li>No smoking beyond designated areas.</li>
-                    <li>No photography in sacred locations.</li>
-                    <li>Do not remove natural items like branches.</li>
-                    <li>No disruptive behavior.</li>
-                </ul>
+                        <div className="grid grid-cols-2 gap-3">
+                            <div className="font-fatface text-xl leading-tight">
+                                HARAJUKU<br />STATION
+                            </div>
+                            <div className="text-right text-xs leading-relaxed">
+                                JR Yamanote Line<br />
+                                Tokyo Metro<br />
+                                Chiyoda Line<br />
+                                1 min walk
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-3">
+                            <div className="font-fatface text-xl leading-tight">
+                                KITA-SANDO<br />STATION
+                            </div>
+                            <div className="text-right text-xs leading-relaxed">
+                                Tokyo Metro<br />
+                                Fukutoshin Line<br />
+                                5 min walk
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <h2 className="border-t border-b text-4xl font-fatface tracking-widest m-2 text-center text-shadow-lg text-shadow-gray">ETIQUETTE</h2>
+                <div>
+                     <ul className="text-xs list-disc pl-5 space-y-2">
+                        <li>Preserve the dignity of the shrine.</li>
+                        <li>No smoking beyond designated areas.</li>
+                        <li>No photography in sacred locations.</li>
+                        <li>Do not remove natural items like branches.</li>
+                        <li>No disruptive behavior.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     )
